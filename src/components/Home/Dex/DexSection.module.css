@@ -1,0 +1,170 @@
+.dexContainer {
+  background: rgba(13, 17, 23, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(28, 33, 40, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.tokenInput {
+  background: rgba(22, 27, 34, 0.8);
+  border: 1px solid rgba(28, 33, 40, 0.5);
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.tokenInput:hover {
+  border-color: rgba(28, 33, 40, 0.8);
+  box-shadow: 0 0 0 1px rgba(28, 33, 40, 0.8);
+}
+
+.tokenInput:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.swapButton {
+  background: linear-gradient(45deg, var(--color-primary), #14f1c8);
+  border: none;
+  border-radius: 12px;
+  color: var(--color-darkmode);
+  font-weight: 500;
+  padding: 12px 24px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.swapButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.swapButton:hover::before {
+  left: 100%;
+}
+
+.swapButton:disabled {
+  background: rgba(33, 38, 45, 0.8);
+  color: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+}
+
+.tokenSelector {
+  background: rgba(22, 27, 34, 0.8);
+  border: 1px solid rgba(28, 33, 40, 0.5);
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.tokenSelector:hover {
+  background: rgba(28, 33, 40, 0.8);
+}
+
+.tokenList {
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) rgba(22, 27, 34, 0.8);
+}
+
+.tokenList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tokenList::-webkit-scrollbar-track {
+  background: rgba(22, 27, 34, 0.8);
+  border-radius: 3px;
+}
+
+.tokenList::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+.tokenList::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+.routeInfo {
+  background: rgba(22, 27, 34, 0.8);
+  border: 1px solid rgba(28, 33, 40, 0.5);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.priceImpact {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.priceImpactGood {
+  color: #3cd278;
+}
+
+.priceImpactWarning {
+  color: #f7931a;
+}
+
+.priceImpactDanger {
+  color: #cf3127;
+}
+
+/* Animaciones */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floatingElement {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.pulsingElement {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Loading spinner */
+.loadingSpinner {
+  border: 2px solid rgba(20, 241, 149, 0.1);
+  border-top: 2px solid var(--color-primary);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

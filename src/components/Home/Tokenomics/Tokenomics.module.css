@@ -1,0 +1,163 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.content {
+  background-color: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 2.5rem;
+  border: 1px solid rgba(20, 241, 149, 0.1);
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-space-grotesk);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ticker {
+  color: #14f195;
+  font-size: 0.8em;
+}
+
+.supplyInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.supplyAmount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.supplyAmount .value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: var(--font-space-grotesk);
+}
+
+.supplyAmount .label {
+  font-size: 0.9rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.blockchainBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(20, 241, 149, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  color: #14f195;
+  font-weight: 500;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #14f195;
+  border-radius: 50%;
+}
+
+.distributionGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+.distributionItem {
+  background-color: rgba(17, 17, 17, 0.4);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.distributionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.percentageBadge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: var(--font-space-grotesk);
+}
+
+.distributionTitle {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.barContainer {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.6s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.distributionDescription {
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .supplyInfo {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .distributionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+} 

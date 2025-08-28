@@ -1,0 +1,289 @@
+.containerRoadmap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(20, 241, 149, 0.3) transparent;
+}
+
+.containerRoadmap::-webkit-scrollbar {
+  height: 6px;
+}
+
+.containerRoadmap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.containerRoadmap::-webkit-scrollbar-thumb {
+  background-color: rgba(20, 241, 149, 0.3);
+  border-radius: 3px;
+}
+
+.roadmapGrid {
+  display: flex;
+  gap: 4rem;
+  position: relative;
+  padding: 6rem 2rem 2rem;
+  width: fit-content;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.roadmapItem {
+  background-color: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid rgba(20, 241, 149, 0.1);
+  position: relative;
+  z-index: 2;
+  width: 320px;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+}
+
+.roadmapItem:hover {
+  transform: translateY(-5px);
+  border-color: var(--dot-color);
+  box-shadow: 0 0 30px rgba(var(--dot-color-rgb), 0.1);
+}
+
+.roadmapItem::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--dot-color);
+  left: 50%;
+  top: -60px;
+  transform: translateX(-50%);
+  box-shadow: 0 0 20px var(--dot-color);
+  z-index: 3;
+}
+
+.roadmapItem::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 40px;
+  background: var(--dot-color);
+  left: 50%;
+  top: -40px;
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+
+.roadmapItem[data-status-color="#14f195"] {
+  --dot-color: #14f195;
+  --dot-color-rgb: 20, 241, 149;
+}
+
+.roadmapItem[data-status-color="#f59e0b"] {
+  --dot-color: #f59e0b;
+  --dot-color-rgb: 245, 158, 11;
+}
+
+.roadmapItem[data-status-color="#3b82f6"] {
+  --dot-color: #3b82f6;
+  --dot-color-rgb: 59, 130, 246;
+}
+
+.roadmapItem[data-status-color="#8b5cf6"] {
+  --dot-color: #8b5cf6;
+  --dot-color-rgb: 139, 92, 246;
+}
+
+.connectingLine {
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  top: 4rem;
+  height: 4px;
+  background: linear-gradient(to right,
+    rgba(20, 241, 149, 0.3),
+    rgba(245, 158, 11, 0.3),
+    rgba(59, 130, 246, 0.3),
+    rgba(139, 92, 246, 0.3)
+  );
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.movingLight {
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(20, 241, 149, 0.8),
+    transparent
+  );
+  border-radius: 2px;
+  top: 0;
+  filter: blur(2px);
+  animation: moveLight 8s linear infinite;
+}
+
+@keyframes moveLight {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% - 100px);
+    opacity: 0;
+  }
+}
+
+.status {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.statusGreen {
+  background-color: rgba(20, 241, 149, 0.1);
+  color: #14f195;
+}
+
+.statusYellow {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.statusBlue {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.statusPurple {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-space-grotesk);
+  text-align: center;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description {
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.liveProducts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.liveProduct {
+  padding: 1.25rem;
+  background: rgba(20, 241, 149, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(20, 241, 149, 0.1);
+}
+
+.liveProduct h4 {
+  color: #14f195;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.liveProduct p {
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.descriptionList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  text-align: left;
+}
+
+.descriptionList li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #888;
+}
+
+.descriptionList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--dot-color, #14f195);
+}
+
+@media (max-width: 768px) {
+  .containerRoadmap {
+    padding: 1rem;
+  }
+
+  .roadmapGrid {
+    padding: 5rem 1rem 2rem;
+    gap: 3rem;
+  }
+
+  .roadmapItem {
+    padding: 1.5rem;
+    width: 280px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .liveProduct {
+    padding: 1rem;
+  }
+
+  .liveProduct h4 {
+    font-size: 1rem;
+  }
+
+  .connectingLine {
+    left: 1rem;
+    right: 1rem;
+    top: 3rem;
+  }
+}
+  
