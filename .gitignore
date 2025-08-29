@@ -14,9 +14,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Environment variables
-.env
-.env.*.local
 
 # Local Firebase emulators and settings
 .firebase/
